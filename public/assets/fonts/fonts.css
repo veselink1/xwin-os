@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Ubuntu_400_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(Ubuntu_400_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(Ubuntu_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/ubuntu/v8/_xyN3apAT_yRRDeqB3sPRg.woff */
+        url(Ubuntu_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/ubuntu/v8/sVvvcJDRTINJla2R4XwPVevvDin1pK8aKteLpeZ5c0A.ttf */
+        url(Ubuntu_400_normal.svg#Ubuntu_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=MOWTjcs_zhdIcGnXsgVhnA&skey=7e59fc036a1a8481#Ubuntu */
+}
+@font-face {
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Ubuntu+Mono_400_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(Ubuntu+Mono_400_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(Ubuntu+Mono_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/ubuntumono/v6/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff */
+        url(Ubuntu+Mono_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/ubuntumono/v6/ViZhet7Ak-LRXZMXzuAfkSwlidHJgAgmTjOEEzwu1L8.ttf */
+        url(Ubuntu+Mono_400_normal.svg#Ubuntu+Mono_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=ViZhet7Ak-LRXZMXzuAfkXNsigHlcrQGNV8nkUSFQfc&skey=8c1feb82f3a61020#UbuntuMono */
+}

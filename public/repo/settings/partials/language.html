@@ -1,0 +1,13 @@
+<div>
+    <div layout="row">
+        <md-input-container style="margin-right: 10px;">
+            <label>Language</label>
+            <md-select ng-model="lang">
+                <md-option ng-repeat="lang in langs" value="{{lang}}">{{lang}}</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-button class="md-raised md-button md-ink-ripple" type="button" ng-transclude="" ng-click="save(lang)">Save</mb-button>
+    </div>
+</div>

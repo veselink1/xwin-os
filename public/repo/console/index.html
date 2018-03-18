@@ -1,0 +1,89 @@
+<html>
+
+<head></head>
+
+<body>
+    <div>
+        <style>
+            html,
+            body,
+            div#input-area,
+            iframe {
+                border: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+                padding: 0;
+                background-color: #002B36;
+            }
+            
+            div#input-area [type="text"] {
+                color: #b58900;
+                padding: 0.2em;
+                padding-left: 1em;
+                width: 100%;
+                background-color: transparent;
+                border: none;
+            }
+            
+            div#input-area [type="text"]:focus {
+                background-color: #073642;
+                outline: none;
+            }
+            
+            div#input-area pre {
+                color: white;
+                background-color: #002129;
+                padding: 0.2em;
+                padding-left: 1em;
+            }
+        </style>
+
+        <!-- <iframe src="http://hackertyper.net/"/> -->
+
+        <div id="input-area">
+            <input type='text'>
+        </div>
+        
+        <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script>
+            window.onload = function() {
+                
+            interop.app.setSize({ width: '40em', height: '20em' });
+            var inputArea = $(document.getElementById('input-area'));
+            console.log(inputArea)
+            
+            
+            inputArea.bind('keydown', function(e) {
+                if(inputArea.children().length == 0) {
+                    inputArea.append('<div></div>')
+                }
+                if(e.which == 13) {
+                    var children = inputArea.children('input[type="text"]');
+                    var result;
+                    try {
+                         var x = eval(children.last().val());
+                         if (typeof x === 'undefined') {
+                             result = 'undefined';
+                         } else if(typeof x === typeof({})) {
+                             result = JSON.stringify(x, null, '\t');
+                         } else {
+                             result = x;
+                         }
+                    } catch (e) {
+                        result = JSON.stringify(e, null, '\t');
+                    }
+                    inputArea.append('<pre>' + result + '</pre><input type="text">');
+                    inputArea.children().last()[0].focus()
+                }
+            });
+
+            };
+        </script>
+    </div>
+</body>
+
+</html>

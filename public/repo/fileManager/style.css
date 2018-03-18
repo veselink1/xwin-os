@@ -1,0 +1,9 @@
+x-file {
+    display: inline-block;
+    height: 6em;
+    width: 4.8em;
+    margin: 0.4em;
+    float: left;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    background-color: white;
+}

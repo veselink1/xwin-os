@@ -1,0 +1,32 @@
+<div>
+    <style>
+        .background-preview {
+            height: 8em;
+            width: 8em;
+            margin: 8px;
+            float: left;
+            background-size: cover;
+        }
+    </style>
+
+    <div>
+        <md-input-container style="margin-right: 10px;">
+            <h2 class="md-title">Theme</h2>
+            <md-select ng-model="theme">
+                <md-option ng-repeat="theme in themes" value="{{theme}}">{{theme}}</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div>
+        <h2 class="md-title">Background</h2>
+        <div>
+            <div ng-repeat="bgStyle in backgroundStyles" ng-click="setBackground('url(' + bgStyle + ')')" ng-style="{ backgroundImage: 'url(' + bgStyle + ')' }"
+            class="background-preview">
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <md-button class="md-raised md-button md-ink-ripple" type="button" ng-transclude="" ng-click="save({ theme: theme, background: background })">Save</mb-button>
+    </div>
+</div>

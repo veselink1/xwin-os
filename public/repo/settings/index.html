@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style class="cp-pen-styles">
+        body {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            background-color: #EEE;
+        }
+        
+        .fabToolbardemoBasicUsage md-fab-toolbar.md-right md-fab-trigger.align-with-text {
+            left: 7px;
+        }
+        
+        body > div[ng-app],
+        body > div[ng-app] > md-content {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .setting-button {
+            width: 12em;
+            height: 9em;
+        }
+        
+        .setting-button .material-icons {
+            font-size: 4em;
+        }
+        
+        .h-scroller {
+            margin: auto;
+            width: 80%;
+            height: 9em;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 8px;
+        }
+        
+        div[ng-view] {
+            margin: auto;
+            position: relative;
+            left: 10%;
+            width: 80%;
+            border-radius: 3px;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.body.ondragstart = function() { return false; };
+    </script>
+
+    <div ng-controller="AppCtrl" ng-app="SettingsApp">
+
+        <div class="md-padding h-scroller">
+
+            <a href="#personalization">
+                <md-button class="md-raised md-button md-ink-ripple setting-button" type="button" ng-transclude="" aria-label="Personalization">
+                    <i class="material-icons">settings_system_daydream</i>
+                    <br>Personalization
+                </md-button>
+            </a>
+
+            <a href="#language">
+                <md-button class="md-raised md-button md-ink-ripple setting-button" type="button" ng-transclude="" aria-label="Language">
+                    <i class="material-icons">language</i>
+                    <br>Language
+                </md-button>
+            </a>
+
+        </div>
+        
+        <div class="md-padding" ng-view></div>
+
+    </div>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.js'></script>
+
+    <script>
+        (function () {
+            'use strict';
+            angular.module('SettingsApp', [
+                'ngRoute',
+                'ngMaterial',
+                'ngMessages',
+            ]).config(['$routeProvider',
+            function($routeProvider) {
+                $routeProvider.
+                when('/personalization', {
+                    templateUrl: 'partials/personalization.html',
+                    controller: 'PersonalizationCtrl'
+                }).
+                when('/language', {
+                    templateUrl: 'partials/language.html',
+                    controller: 'LanguageCtrl'
+                }).
+                when('/privacy', {
+                    templateUrl: 'partials/privacy.html',
+                    //controller: 'PrivacyCtrl'
+                }).otherwise({
+                    redirectTo: '/'
+                });
+            }]).controller('AppCtrl', function ($scope, $mdSidenav) {
+                $scope.toggleSidebar = function() {
+                    $mdSidenav('left').toggle();
+                };
+            }).controller('PersonalizationCtrl', function ($scope, $http) {
+                $scope.themes = [
+                    'Default', 'Dark', 'Blue'
+                ];
+                $http.get('staticData.json')
+                    .then(function(res) {
+                        $scope.backgroundStyles = res.data.backgrounds;
+                    }, function(res) {
+                        console.error(res);
+                    });
+                $scope.save = function(settings) {
+                    if (settings) {
+                        interop.os.setSettings({
+                            theme: settings.theme,
+                            background: settings.background,
+                        });
+                    }
+                };
+                $scope.background = interop.os.getSettings().background;
+                $scope.setBackground = function(bg) {
+                    $scope.background = bg;
+                }
+            }).controller('LanguageCtrl', function ($scope) {
+                $scope.langs = [
+                    'English', 'German', 'Bulgarian'
+                ];
+                $scope.save = function(lang) {
+                    if (lang) {
+                        interop.os.setSettings({
+                            lang: lang,
+                        });
+                    }
+                }
+            })
+        }());
+    </script>
+</body>
+
+</html>

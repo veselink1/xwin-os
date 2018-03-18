@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="FilesApp">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button aria-label="Go Back">
+                Back
+            </md-button>
+            <h2>
+          <span>Files</span>
+        </h2>
+            <span flex=""></span>
+            <md-button class="md-raised" aria-label="Learn More">
+                Learn More
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-content>
+        <file-manager>
+
+        </file-manager>
+    </md-content>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.js'></script>
+
+    <script src="files.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            var app = angular.module('FilesApp', [
+                'ngRoute',
+                'ngMaterial',
+                'ngMessages',
+            ]);
+            app.directive('fileManager', ['$compile', function($compile) {
+                return {
+                    restrict: 'E',
+                    link: function(scope, element, attrs) {
+                        function addFile(fileName) {
+                            var file = angular.element('<x-file file-name="' + fileName + '"></x-file>');
+                            element.append(file);
+                            $compile(file)(scope);
+                        };
+                        
+                        getFiles(function(files) {
+                            files.forEach(function(value) {
+                                addFile(value.name);
+                            });
+                        });
+                        
+                        var files = [{ name: "file.1" },{ name: "file.2" },{ name: "file.3" }];
+                        files.forEach(function(value) {
+                            addFile(value.name);
+                        });
+                    },
+                };
+            }]);
+            app.directive('file', function() {
+                return {
+                    restrict: 'E',
+                    template: '<div></div><p class="title">{{ fileName }}</p>',
+                    link: function(scope, element, attrs) {
+                        scope.fileName = attrs.fileName;
+                    },
+                };
+            });
+        }());
+    </script>
+
+</body>
+
+</html>

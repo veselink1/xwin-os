@@ -1,0 +1,6 @@
+{
+  "name"    : "Snake",
+  "version" : "0.1.0",
+  "main": "main.js",
+  "description": "A simple game that mimics the classic snake game."
+}

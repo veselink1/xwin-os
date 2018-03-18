@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body style="
+    background-image: url('/assets/img/wallpapers/img6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+">
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1> Welcome </h1>
+
+        <p style="padding-top: 2em;"><a href="/auth/google" class="btn btn-danger" style="
+    padding: 28px 40px;
+    font-size: 1.2em;
+"><span class="fa fa-google-plus"></span> Login </a></p>
+
+    </div>
+
+</div>
+
+  </body></html>

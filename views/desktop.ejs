@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Desktop</title>
+        
+        <link rel="stylesheet" type="text/css" href="/assets/css/desktop.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.css'>
+        <link rel="stylesheet" href="/assets/css/simplebar.css">
+        
+        <script src="/assets/bower_components/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+        <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+        <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc1/angular-material.js'></script>
+        <script src="/assets/js/simplebar.min.js"></script>
+        <script src="/assets/js/utils.js"></script>
+        
+    </head>
+	<body>
+        
+        <x-desktop ng-app="xwin"></x-desktop>
+       
+        <script>
+            (function() {
+                'use strict';
+                
+                var module = angular.module('staticData', []);
+                
+                var sUser = <%- user %>;
+                
+                module.constant('userProfile', {
+                    name: 'Veselin Karaganev',
+                    email: 'vesko.karaganev@gmail.com',
+                    image: 'about:blank',
+                });
+                
+                module.value('userData', sUser.data || {});
+                
+            })();
+        </script>
+        <script src="/app/app.module.js"></script>
+        <script src="/app/shared/applicationWindow/applicationWindowDirectives.js"></script>
+        <script src="/app/shared/desktopDirective/desktopDirective.js"></script>
+        <script src="/app/shared/sidebarDirective/sidebarDirective.js"></script>
+        <script src="/app/shared/taskbarDirective/taskbarDirective.js"></script>
+        <script src="/app/shared/controls/controlsDirectives.js"></script>
+        <script src="/app/components/serverApi.js"></script>
+        <script src="/app/components/googleApi.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=checkGoogleAuth"></script>
+	</body>
+</html>

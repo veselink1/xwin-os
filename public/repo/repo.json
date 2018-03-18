@@ -1,0 +1,13 @@
+{
+    "name": "XWin OS Core Repo",
+    "description": "The default repo.",
+    "packages": {
+        "xwinos.console": { "src": "/console" },
+        "viliusle.miniPaint": { "src": "/miniPaint" },
+        "fengyuanchen.photo-editor": { "src": "/photoEditor" },
+        "xwinos.settings": { "src": "/settings" },
+        "mjhasbach.ceros-snake": { "src": "/cerosSnake" },
+        "xwinos.text-editor": { "src": "/notepad" },
+        "xwinos.file-manager": { "src": "/fileManager" }
+    }
+}

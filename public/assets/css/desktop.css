@@ -1,0 +1,482 @@
+.account-button {
+    background-color: #424242;
+    background-image: url(/assets/img/settings.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    border-radius: 500em;
+    bottom: 0;
+    height: 2.5em;
+    margin: .5em;
+    position: absolute;
+    right: 0;
+    width: 2.5em;
+}
+
+.taskbar-item-text {
+    margin-bottom: .5em;
+    margin-left: 2.5em;
+    margin-top: .5em;
+    position: absolute;
+}
+.application-icon{
+    position: absolute;
+    width: auto;
+    height: 1.5em;
+    margin-top: 0.25em;
+}
+application-window {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    background: white;
+    box-shadow: 0 8px 16px 1px rgba(0,0,0,0.2);
+    min-height: 10.94em;
+    min-width: 16.4em;
+    position: absolute !important;
+    /*transition-property: opacity, width, height;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;*/
+    z-index: 20;
+    overflow: hidden;
+}
+
+application-window.focused {
+    box-shadow: 0 16px 32px 2px rgba(0,0,0,0.4);
+}
+
+application-window[window-state="minimized"] {
+    display: none;
+}
+
+application-window.resizing {
+    transition: none !important;
+}
+
+application-window[window-state="maximized"] {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+}
+
+/*application-window application-window-buttons > * {
+    border: 1px solid rgba(150,150,150,0.4);
+    border-radius: 1em;
+}
+application-window application-window-buttons application-window-button-close,application-window application-window-buttons application-window-button-maximize,application-window application-window-buttons application-window-button-minimize {
+    background-color: rgb(191,191,191);
+}*/
+.taskbar-icon{
+    position: absolute;
+    width: auto;
+    height: 1.5em;
+    margin-top:0.35em; 
+}
+
+application-window application-window-buttons > * {
+    color: #666;
+    border-radius: 3px;
+    transition: box-shadow ease-in-out 0.2s;
+    height: 1.575em;
+}
+
+application-window application-window-buttons > *:hover {
+    background-color: rgba(158,158,158,0.2);
+    border-radius: 3px;
+}
+
+application-window application-window-title {
+    
+}
+
+application-window application-window-top {
+    background-color: #DDD;
+}
+
+application-window-area {
+    z-index: 800;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 2.7em);
+}
+
+application-window-buttons {
+    display: block;
+    height: 100%;
+    right: 0;
+    padding-left: .6em;
+    position: absolute;
+    top: 0;
+}
+
+application-window-buttons > * {
+    background-size: contain;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-left: .1em;
+    margin-right: .2em;
+    margin-top: 0.2em;
+    position: relative;
+}
+
+application-window-content {
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -webkit-user-select: auto;
+    clear: both;
+    display: block;
+    float: none;
+    height: calc(100% - 2em);
+    overflow: hidden;
+    position: relative;
+    user-select: auto;
+    width: 100%;
+    z-index: 40;
+    background-color: white;
+}
+
+application-window-content > iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+application-window-header {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+application-window-icon .icon {
+    height: 1em;
+    margin: 0;
+    padding: 0;
+    width: 1em;
+}
+
+application-window-resize {
+    bottom: -.4em;
+    cursor: nw-resize;
+    display: block;
+    height: 1em;
+    position: absolute;
+    right: -.4em;
+    width: 1em;
+    z-index: 50;
+}
+
+application-window-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 32em;
+}
+
+application-window-top {
+    box-sizing: border-box;
+    clear: both;
+    display: block;
+    float: none;
+    height: 2em;
+    line-height: 2em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 21;
+}
+
+/*
+application-window.focused application-window-buttons application-window-button-close {
+    background-color: rgb(255,90,85);
+}
+
+application-window.focused application-window-buttons application-window-button-close:hover {
+    background-image: url(/assets/img/desktop-default-theme/window/close.png);
+}
+
+application-window.focused application-window-buttons application-window-button-maximize {
+    background-color: rgb(30,195,42);
+}
+
+application-window.focused application-window-buttons application-window-button-maximize:hover {
+    background-image: url(/assets/img/desktop-default-theme/window/maximize.png);
+}
+
+application-window.focused application-window-buttons application-window-button-minimize {
+    background-color: rgb(252,192,0);
+}
+
+application-window.focused application-window-buttons application-window-button-minimize:hover {
+    background-image: url(/assets/img/desktop-default-theme/window/minimize.png);
+}*/
+
+application-window.focused application-window-top {
+    background-color: #EEE;
+}
+
+application-window.maximized {
+    height: 100%;
+    widows: 100%;
+}
+
+application-window.moving {
+    opacity: 0.8;
+}
+
+body {
+    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100vw;
+}
+
+html {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+sidebar-item {
+    display: inline-block;
+    height: 100%;
+}
+
+taskbar-item {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+taskbar-item:hover {
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+taskbar-item .start-button {
+    background-color: hsla(0, 0%, 10%, 0.8);
+    background-image: url(/assets/img/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    border-radius: 500em;
+    height: 2.3em;
+    margin: .2em;
+    width: 2.3em;
+}
+
+taskbar-item[taskbar-window-item] {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: .8em;
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    border-radius: 50em;
+    bottom: 0;
+    color: rgb(245, 245, 245);
+    display: inline-block;
+    height: 2.3em;
+    margin: .2em;
+    position: relative;
+    width: 11em;
+}
+
+taskbar-item[taskbar-button] {
+    height: 100%;
+    width: 2.4em;
+    text-align: center;
+    color: #222;
+}
+
+taskbar-item[taskbar-window-item]:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+x-desktop {
+    background-image: url(/assets/img/wallpapers/img0.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+x-sidebar {
+    background-color: rgba(0,0,0,0.9);
+    bottom: 0;
+    color: white;
+    display: block;
+    height: 100%;
+    left: -24em;
+    position: absolute;
+    transition: left 0.2s cubic-bezier(0.22,0.61,0.36,1);
+    width: 24em;
+    z-index: 900;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+
+x-sidebar .account-info {
+    background-color: rgba(0,0,0,0.1);
+    height: 10em;
+}
+
+x-sidebar .account-info .account-picture {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 9em;
+    box-sizing: border-box;
+    height: 6em;
+    position: relative;
+    margin-left: 1em;
+    top: 2em;
+    padding: .5em;
+    width: 6em;
+    border-radius: 6em;
+    background-size: cover;
+}
+
+x-sidebar .applications {
+    height: 24em;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+x-sidebar .account-username {
+    left: 8em;
+    position: relative;
+    text-align: left;
+    top: -3em;
+    z-index: 900;
+    line-height: 1.875em;
+}
+/*
+x-sidebar .file-info {
+    background-color: rgba(0,0,0,0.5);
+    height: 13em;
+}
+
+x-sidebar .store-info {
+    background-color: rgba(0,0,0,0.3);
+    height: 13em;
+}*/
+
+sidebar-item {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+sidebar-item:nth-child(2) {
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+
+application-icon {
+    display: inline-block;
+    height: 4em;
+    width: 100%;
+    margin: 0.1em;
+    box-sizing: border-box;
+    padding: 0.4em;
+}
+
+application-icon img {
+    height: 3.2em;
+    width: 3.2em;
+}
+
+application-icon span {
+    display: inline-block;
+    position: relative;
+}
+
+x-sidebar .applications application-icon span {
+    display: inline-block;
+    position: relative;
+    bottom: 1.25em;
+    left: 1em;
+}
+
+.search,.account-search{
+    width: 100%;
+    height: 2em;
+    position: relative;
+    z-index: 11;
+    background-color: rgb(60, 60, 60) !important;
+    border: none;
+    color: white;
+}
+
+application-icon:hover {
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+x-sidebar[data-sidebar-state="true"] {
+    transition: left 0.6s cubic-bezier(0.22,0.61,0.36,1);
+    left: 0;
+}
+
+x-taskbar {
+    background-color: rgba(255,255,255,0.8);
+    bottom: 0;
+    display: inline-block;
+    min-height: 2.7em;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+x-taskbar:hover, x-taskbar *:hover, x-sidebar:hover, x-sidebar *:hover, application-window:hover, application-window *:hover {
+    cursor: default;
+}
+
+application-window .content-shadow {
+    height: 100%;
+    height: calc(100% - 2em);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+}
+
+application-window-area .background-shadow {
+    width: 100%;
+    height: 100%;
+}
+
+x-taskbar .taskbar-clock {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    line-height: 2.75em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+x-desktop .widget {
+    display: inline-block;
+    float: right;
+    opacity: 0.9;
+}

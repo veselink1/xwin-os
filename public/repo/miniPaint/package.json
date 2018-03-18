@@ -1,0 +1,6 @@
+{
+  "name"    : "miniPaint",
+  "version" : "0.1.0",
+  "main": "main.js",
+  "description": "The default painting application."
+}

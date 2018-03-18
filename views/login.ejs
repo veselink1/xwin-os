@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <style>
+        body {
+            color: #1a2326;
+            font-family: "Roboto", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        header.welcome-ha {
+            background-color: #0143A3;
+            background: -webkit-linear-gradient(#0143A3, #0273D4);
+            background: linear-gradient(#0143A3, #0273D4);
+            color: #fff;
+        }
+        
+        div.welcome-text {
+            height: auto;
+            position: relative;
+            padding: 80px 48px 40px;
+            text-align: center;
+        }
+        
+        article {
+            padding: 24px 16px;
+        }
+        
+        .text-headline {
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            font-weight: 450;
+            opacity: .87;
+            line-height: 32px;
+        }
+        
+        .logo:after { 
+            content: 'XWin OS';
+            font-size: 4em;
+            position: absolute;
+            left: 0;
+            top: 2em;
+            right: 0;
+            height: 224px;
+        }
+        
+        .text-body {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+            font-weight: 400;
+            opacity: .87;
+            line-height: 28px;
+            padding: 0;
+        }
+        
+        h1.text-headline {
+            width: auto;
+            font-size: 20px;
+            line-height: 28px;
+            margin: 16px auto;
+            padding-top: 208px;
+        }
+        
+        div.cta {
+            height: 3em;
+            line-height: 3em;
+            max-width: 40%;
+            min-width: 9em;
+            margin: auto;
+        }
+        
+        .md-button.button-plain {
+            background: white;
+            color: black;
+        }
+        
+        .md-button.button-large {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            line-height: 2.5em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 16px;
+            position: relative;
+            display: block;
+        }
+        
+        .background-steel {
+            background: #253238;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="welcome-ha">
+        <div class="welcome-text is-large">
+            <h1 class="text-headline logo">
+                    One workspace.
+                    <br>
+                    Mobile and desktop.
+                </h1>
+            <div class="cta">
+                <a class="md-raised button button-large button-plain md-button md-ink-pipple" ng-transclude href="/auth/google" md-button="md-button">
+                    LOGIN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div layout-gt-sm="row" style="margin: 0 -24px" class="layout-gt-sm-row">
+            <div flex="33" style="padding:0 24px" class="flex-33">
+                <h3 class="text-headline">Unified</h3>
+                <p class="text-body">XWin OS allows you to use the same set of applications on all of your devices.</p>
+            </div>
+            <div flex="33" style="padding:0 24px" class="flex-33">
+                <h3 class="text-headline">Mobile</h3>
+                <p class="text-body">XWin OS tries to solve the core challenges of sharing data between mobile devices.</p>
+            </div>
+            <div flex="33" style="padding:0 24px" class="flex-33">
+                <h3 class="text-headline">Flexible</h3>
+                <p class="text-body">Continue your working anywhere you go. XWin OS saves your workspace state so you can start where you ended on your other device.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="background-steel">
+        BETA
+    </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+</body>
+
+</html>

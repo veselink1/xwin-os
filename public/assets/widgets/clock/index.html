@@ -1,0 +1,18 @@
+<div>
+    <link rel="stylesheet" href="/assets/widgets/clock/angular-clock.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="/assets/widgets/clock/angular-clock.min.js"></script>
+    <script>
+        angular.module('clockWidget', ['ds.clock']);
+    </script>
+    
+    <style>
+        .widget-clock {
+            transform: scale(0.75, 0.75)
+        }
+    </style>
+
+    <div ng-app="clockWidget">
+        <ds-widget-clock style="transform: scale(0.5, 0.5)" show-analog theme="light"></ds-widget-clock>
+    </div>
+</div>
