@@ -1,6 +1,6 @@
 # xwin-os
 A browser-based operating system with support for distributed package management.  
-2015 © veselink1, lubomarinski
+2015 © [veselink1](https://github.com/veselink1), [lubomarinski](https://github.com/lubomarinski)
 
 ![Screenshot](https://raw.githubusercontent.com/veselink1/xwin-os/master/screenshots/Screenshot%20(156).png)
 
